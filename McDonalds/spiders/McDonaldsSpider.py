@@ -4,7 +4,7 @@ from scrapy import Request
 from scrapy.loader import ItemLoader
 import json
 import logging
-# from scrapy.spiders import XMLFeedSpider
+
 
 class scrapeMcDonalds(SitemapSpider):
     name = "scrapeMcDonalds"
@@ -12,9 +12,7 @@ class scrapeMcDonalds(SitemapSpider):
     sitemap_urls = ['https://www.mcdonalds.com/us/en-us/sitemap.xml']
     sitemap_rules = [('/us/en-us/product/', 'parse')]
     visitedItemIds = set()
-    # namespaces = [('n', 'http://www.sitemaps.org/schemas/sitemap/0.9')]
-    # itertag = 'n:loc'
-    # iterator = 'xml'
+
 
     def __init__(self):
         SitemapSpider.__init__(self)
@@ -37,17 +35,14 @@ class scrapeMcDonalds(SitemapSpider):
 
 
     def parse(self, response):
+        # Find the item ID and then make a request for the item details.
         itemId = response.css('div.itemID::attr(data-item-id)').extract()
         itemDetailUrl = f'https://www.mcdonalds.com/wws/json/getItemDetails.htm?country=US&language=en&showLiveData=true&item={itemId[0]}'
         yield Request(itemDetailUrl, method='GET', callback=self.parse_details)# meta={'visitedItemId': visitedItemId})
 
-        # urls = {f"https://www.mcdonalds.com/{li.css('a:attr(href)').extract()[9:]}"
-        #         for li in response.css('nav.product-size-wrapper.ng-scope > ul > li') if not currentUrl}
-        # print(urls)
-        # for url in urls:
-        #     yield Request(url, method='GET', callback=self.parse)
 
     def parse_details(self, response):
+        # Parse the item detail response
         dailyValue = {'calories': '',
                         'calories_from_fat': '',
                         'energy_kJ': '',
