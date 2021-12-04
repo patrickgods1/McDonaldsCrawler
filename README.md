@@ -1,5 +1,5 @@
 # McDonaldsCrawler
-McDonaldsCrawler is an application designed to scrape all WeWork locations for the followng information:
+McDonaldsCrawler is an application designed to scrape all McDonalds menu items for the followng nutrition information:
 
 * itemId
 * itemName
@@ -67,6 +67,8 @@ McDonaldsCrawler is an application designed to scrape all WeWork locations for t
 * caffeine_DV
 * caffeine_units
 * itemIngredientStatement
+
+All the nutrition data is summarized into a [dashboard](https://datastudio.google.com/reporting/fa582f39-db39-4ab0-bffe-2acb5ef6f2f3).
 
 ## Development
 These instructions will get you a copy of the project up and running on your local machine for development.
