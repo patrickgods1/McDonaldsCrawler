@@ -68,7 +68,7 @@ McDonaldsCrawler is an application designed to scrape all McDonalds menu items f
 * caffeine_units
 * itemIngredientStatement
 
-All the nutrition data is summarized into a [dashboard](https://datastudio.google.com/reporting/fa582f39-db39-4ab0-bffe-2acb5ef6f2f3).
+All the nutrition data is summarized into a [Google Data Studio dashboard](https://datastudio.google.com/reporting/fa582f39-db39-4ab0-bffe-2acb5ef6f2f3) or [Tableau Public dashboard](https://public.tableau.com/app/profile/pat3330/viz/McDonaldsNutrition_16413257497100/McDonaldsNutrition?publish=yes).
 ## Google Data Studio Dashboard - Screenshots
 ![McDonaldsNutrition](https://user-images.githubusercontent.com/60832092/144688730-263be295-2c66-4d48-8a80-ba1e4daf2064.PNG)
 ![MostCalories](https://user-images.githubusercontent.com/60832092/144688759-decc3171-675e-4c99-928e-744002774848.PNG)
